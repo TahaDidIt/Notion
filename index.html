@@ -1,0 +1,76 @@
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+
+
+<style type="text/css">
+
+@import url(//fonts.googleapis.com/css?family=VT323);
+
+body {
+  background-image: url('https://images.alphacoders.com/201/201831.png');
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'VT323', sans-serif;
+  font-size: 20vw;
+  color:white;
+  text-align: center;
+  padding-top: 10%;
+  vertical-align: middle;
+  height: 100%
+  }
+
+
+myoutercontainer {
+	position:relative;
+    height: 100%;
+    }
+myinnercontainer {
+	position:absolute;
+    top:50%;
+    height:10em;
+    margin-top:-5em;
+    }
+.full-height {
+  height: 100%;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+
+
+</style>
+</head>
+
+
+<body id="full-height"; onload="startTime()">
+
+<div id="myoutercontainer">
+	<div id="myinnercontainer">
+		<div id="txt"></div>
+	</div>
+</div>
+
+
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+</body>
+</html>
+
